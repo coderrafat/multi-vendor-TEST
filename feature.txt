@@ -1,0 +1,35 @@
+            Multi vendor project
+----------------------------------------------
+1) role : customer, seller, admin
+
+customer access : product read and catagorize, account for user, create order, wishlist, cart  ==> mredul vai
+
+seller access : product CRUD and catagorize, account for seller, dashboard , order reject, status update request ==> ferdous vai
+
+admin access : account for admin, seller account confirmation, withdraw confirmation, order read, status update confirmation 
+
+product : name , description, product img, quantity, price, catagory
+
+order : customerid , productid, total price
+
+customer : (name, email, password required), (phone , address required before order)
+seller  : (name, email, password required for account) , (shop name, phone, address, payment required profile update) 
+admin : (name, email, password) only one
+
+
+Model: 
+1) customer
+2) seller
+3) admin
+4) product
+5) order
+6) catagory
+
+customer = order
+product = seller
+catagory = product
+order = seller
+
+
+
+

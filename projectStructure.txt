@@ -1,0 +1,71 @@
+Multi Vendor Website
+
+Object:
+	1. customer
+	2. seller
+	3. admin
+	4. category
+	5. product
+	6. order
+
+Property: 
+	customer:
+		1. name
+		2. email
+		3. password
+		4. role
+		5. address
+		6. Contact Number
+		7. image
+
+	seller:
+		1. shop name
+		2. email
+		3. password
+		4. contact number
+		5. image
+		6. status
+		7. payment
+		8. shopInfo{}
+		9. role
+		10. address[]
+
+	admin: 
+		1. name
+		2. email
+		3. password
+		4. contact number
+		5. image
+		6. admin
+		7. status
+
+	category: 
+		1. name
+		2. slug
+		3. image
+
+	product: 
+		1. seller id: Seller
+		2. name
+		3. slug
+		4. category: Category
+		5. price
+		6. brand
+		7. stock
+		8. discount
+		9. description
+		10. shopName
+		11. images[]
+		12. rating
+
+	order: 
+		1. cart[]
+		2. shippingAddress
+		3. totalPrice
+		4. status
+		5. paymentInfo
+		6. paidAt
+		7. deliveredAt
+
+		
+
