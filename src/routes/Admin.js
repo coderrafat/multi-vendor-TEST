@@ -1,47 +1,23 @@
-const { AdminLogin, AdminProfile, UpdateAdminProfile, UpdateAdminPassword, ResetPassword, UpdateProfilePic, ApprovedSeller, PendingSeller, SellerRequestApprove } = require('../controllers/AdminController');
-const { SendOTP, VerifyOTP } = require('../helpers/OTP');
+const { SellerActive, SellerDeactive, ActiveSellers, DeactiveSellers, PendingSellers } = require('../controllers/AdminController');
 const { isLogin, isAdmin } = require('../middlewares/auth');
 
 const router = require('express').Router();
 
 
+//Seller Active Route
+router.post('/seller/active/:sellerId', isLogin, isAdmin, SellerActive);
 
-//Admin Login Route
-router.get('/admin-login', AdminLogin);
+//Seller Deactive Route
+router.post('/seller/deactive/:sellerId', isLogin, isAdmin, SellerDeactive);
 
-//Admin Profile Route
-router.get('/admin-profile', isLogin, AdminProfile);
+//All Active Seller Route
+router.get('/sellers/active', isLogin, isAdmin, ActiveSellers);
 
-//Update Admin Profile Route
-router.put('/admin/profile/update', isLogin, UpdateAdminProfile);
-
-//Update Admin Profile Picture Route
-router.post('/admin/update/profile-pic', isLogin, UpdateProfilePic);
-
-//Update Admin Password Route
-router.patch('/admin/update-password', isLogin, UpdateAdminPassword);
-
-//Reset Password Route
-router.patch('/admin/reset-password', ResetPassword);
-
-
-
-//Send OTP For Email Verification Route
-router.post('/send-otp', SendOTP);
-
-//Verify OTP For Email Verification Route
-router.get('/verify-otp', VerifyOTP);
-
-
-//Seller Request Approve Route
-router.put('/seller-request-approve/:sellerId', isLogin, isAdmin, SellerRequestApprove);
-
-
-//All Approved Seller Route
-router.get('/approved-sellers', isLogin, isAdmin, ApprovedSeller);
+//All Deactive Seller Route
+router.get('/sellers/deactive', isLogin, isAdmin, DeactiveSellers);
 
 //All Pending Seller Route
-router.get('/pending-sellers', isLogin, isAdmin, PendingSeller);
+router.get('/sellers/pending', isLogin, isAdmin, PendingSellers);
 
 
 

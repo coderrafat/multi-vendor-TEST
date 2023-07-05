@@ -5,7 +5,7 @@ const router = require('express').Router();
 
 
 //Create New Category Route
-router.post('/category/create', isLogin, isAdmin, CreateCategory);
+router.post('/category/create', CreateCategory);
 
 //Update Category Route
 router.patch('/category/update/:categoryId', isLogin, isAdmin, UpdateCategory);

@@ -7,39 +7,32 @@ const SellersSchema = new Schema({
         trim: true,
         required: true,
     },
-    email: {
-        type: String,
-        trim: true,
-        required: true,
-        unique: true,
-    },
-    password: {
-        type: String,
-        required: true,
-        min: 6,
-        max: 64
-    },
-    phoneNumber: {
-        type: Number,
-    },
     shopInfo: {
         type: Object,
-        default: {}
+        default: {},
+        required: true
     },
-    image: {
-        type: String,
+    payment: {
+        type: String
     },
-    status: {
+    accountStatus: {
         type: String,
         default: 'pending'
     },
-    role: {
+    email: {
         type: String,
-        default: 'seller'
+        required: true,
+        unique: true
+    },
+    phoneNumber: {
+        type: String,
+        required: true
+    },
+    image: {
+        type: String
     }
 }, { timestamps: true, versionKey: false });
 
 const SellerModel = model('sellers', SellersSchema);
-
 
 module.exports = SellerModel;
